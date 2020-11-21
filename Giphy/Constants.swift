@@ -14,9 +14,3 @@ struct K{
     struct BandColors {
     }
 }
-
-
-struct EndPointDetails {
-    static let apiKey = "ddQCEJvPOjdNT1BxKjQgdJiGT945xmYx"
-    
-}
