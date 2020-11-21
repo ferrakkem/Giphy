@@ -18,6 +18,10 @@ class ViewController: UIViewController {
     func functionName(){
         print("Hello")
     }
+    
+    func updateUI(){
+        
+    }
 
 }
 
