@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F35370892569CD5B00438087 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35370882569CD5B00438087 /* Constants.swift */; };
+		F353708C2569CF1D00438087 /* TrendingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F353708B2569CF1D00438087 /* TrendingModel.swift */; };
+		F35370912569CF5600438087 /* NetwrokManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35370902569CF5600438087 /* NetwrokManager.swift */; };
 		F371ED672569AA86000229F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371ED662569AA86000229F0 /* AppDelegate.swift */; };
 		F371ED692569AA86000229F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371ED682569AA86000229F0 /* SceneDelegate.swift */; };
 		F371ED6B2569AA86000229F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371ED6A2569AA86000229F0 /* ViewController.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F35370882569CD5B00438087 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F353708B2569CF1D00438087 /* TrendingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingModel.swift; sourceTree = "<group>"; };
+		F35370902569CF5600438087 /* NetwrokManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwrokManager.swift; sourceTree = "<group>"; };
 		F371ED632569AA86000229F0 /* Giphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F371ED662569AA86000229F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F371ED682569AA86000229F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +43,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F353708E2569CF2F00438087 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F353708B2569CF1D00438087 /* TrendingModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F35370942569CF6800438087 /* NetwrokManager */ = {
+			isa = PBXGroup;
+			children = (
+				F35370902569CF5600438087 /* NetwrokManager.swift */,
+			);
+			path = NetwrokManager;
+			sourceTree = "<group>";
+		};
+		F35370962569CF7500438087 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F371ED6A2569AA86000229F0 /* ViewController.swift */,
+				F371ED6C2569AA86000229F0 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F371ED5A2569AA85000229F0 = {
 			isa = PBXGroup;
 			children = (
@@ -58,11 +89,13 @@
 			children = (
 				F371ED662569AA86000229F0 /* AppDelegate.swift */,
 				F371ED682569AA86000229F0 /* SceneDelegate.swift */,
-				F371ED6A2569AA86000229F0 /* ViewController.swift */,
-				F371ED6C2569AA86000229F0 /* Main.storyboard */,
+				F353708E2569CF2F00438087 /* Model */,
+				F35370962569CF7500438087 /* View */,
+				F35370942569CF6800438087 /* NetwrokManager */,
 				F371ED6F2569AA88000229F0 /* Assets.xcassets */,
 				F371ED712569AA88000229F0 /* LaunchScreen.storyboard */,
 				F371ED742569AA88000229F0 /* Info.plist */,
+				F35370882569CD5B00438087 /* Constants.swift */,
 			);
 			path = Giphy;
 			sourceTree = "<group>";
@@ -139,7 +172,10 @@
 			files = (
 				F371ED6B2569AA86000229F0 /* ViewController.swift in Sources */,
 				F371ED672569AA86000229F0 /* AppDelegate.swift in Sources */,
+				F353708C2569CF1D00438087 /* TrendingModel.swift in Sources */,
 				F371ED692569AA86000229F0 /* SceneDelegate.swift in Sources */,
+				F35370912569CF5600438087 /* NetwrokManager.swift in Sources */,
+				F35370892569CD5B00438087 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

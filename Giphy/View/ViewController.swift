@@ -11,17 +11,17 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        functionName()
-    }
-    
-    func functionName(){
-        print("Hello")
-    }
-    
-    func updateUI(){
+        //calling
+        setUpBar()
         
     }
+    
+    //MARK: - setup navigationController
+    func setUpBar(){
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
 
 }
+
 
