@@ -9,7 +9,7 @@ import Foundation
 
 struct K{
     static let cellNibName = "CarInfoTableViewCell"
-    static let cellReuseIdentifier = "carInfoCell"
+    static let cellReuseIdentifier = "trendingGiphyCell"
     
     struct BandColors {
     }

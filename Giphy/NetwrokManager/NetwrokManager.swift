@@ -10,7 +10,7 @@ import Foundation
 struct EndPointDetails {
     static let endPoint = "https://api.giphy.com/v1"
     static let apiKey = "ddQCEJvPOjdNT1BxKjQgdJiGT945xmYx"
-    static let trendingEndpoint = "https://api.giphy.com/v1/stickers/trending?api_key=ddQCEJvPOjdNT1BxKjQgdJiGT945xmYx&limit=25&rating=g"
+    static let trendingEndpoint = "https://api.giphy.com/v1/stickers/trending?api_key=ddQCEJvPOjdNT1BxKjQgdJiGT945xmYx&rating=g&limit="
     static let searchAPI = "https://api.giphy.com/v1/stickers/search?api_key=ddQCEJvPOjdNT1BxKjQgdJiGT945xmYx&q=&limit=25&offset=0&rating=g&lang=en"
 }
 
@@ -18,12 +18,16 @@ class NetwrokManager{
     
     private var dataTask: URLSessionDataTask?
     
-    func getTrendingGiphy(completion: @escaping(Result<TrendingModel, Error>) -> Void){
-        let basicUrl = EndPointDetails.trendingEndpoint
+    func getTrendingGiphy(pageNumber: Int, completion: @escaping(Result<TrendingModel, Error>) -> Void){
+        
+        let basicUrl = "https://api.giphy.com/v1/stickers/trending?api_key=ddQCEJvPOjdNT1BxKjQgdJiGT945xmYx&rating=g&limit=\(pageNumber)"
+        //let basicUrl = EndPointDetails.trendingEndpoint
         
         guard let url = URL(string: basicUrl) else{
             return
         }
+        
+        print("URL****** \(url)")
         
         dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
             // Handle Error
