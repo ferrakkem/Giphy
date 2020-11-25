@@ -23,7 +23,6 @@ class FavouritesCollectionViewController: UIViewController {
         print("FavouritesCollectionViewController")
         setUpBar()
         loadInformation()
-        
     
     }
     
@@ -51,7 +50,9 @@ class FavouritesCollectionViewController: UIViewController {
     
 }
 //MARK: - UICollectionView
-extension  FavouritesCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension  FavouritesCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource,YourCellDelegate {
+
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if favViewModel.numberOfRows(inSection: section) == 0{
@@ -68,33 +69,47 @@ extension  FavouritesCollectionViewController: UICollectionViewDelegate, UIColle
         let favGip = favViewModel.cellForRowAt(indexPath: indexPath)
         print("*favGip*** \(favGip)")
         cell.setCellWithValuesOfCollection(with: favGip)
+        cell.delegate = self
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let value = favViewModel.cellForRowAt(indexPath: indexPath)
-        print("***collectionView \(value)")
-        trendingViewModel.deleteRecord(gipy: value)
-        favouritesCollectionView.reloadData()
-        self.openAlert(title: "Alert",
-                              message: "Deleted as your favpurite",
-                              alertStyle: .alert,
-                              actionTitles: ["Okay", "Cancel"],
-                              actionStyles: [.default, .cancel],
-                              actions: [
-                                  {_ in
-                                       print("okay")
-                                  },
-                                  {_ in
-                                       print("cancel")
-                                  }
-                             ])
 
-      
+    func didTapButton(_ sender: UIButton) {
+        if let indexPath = getCurrentCellIndexPath(sender) {
+            print(indexPath.row)
+            let value = favViewModel.cellForRowAt(indexPath: indexPath)
+            print("***collectionView \(value)")
+            trendingViewModel.deleteRecord(gipy: value)
+            favouritesCollectionView.reloadData()
+            
+            self.openAlert(title: "Alert",
+                                  message: "Deleted as your favpurite",
+                                  alertStyle: .alert,
+                                  actionTitles: ["Okay", "Cancel"],
+                                  actionStyles: [.default, .cancel],
+                                  actions: [
+                                      {_ in
+                                           print("okay")
+                                      },
+                                      {_ in
+                                           print("cancel")
+                                      }
+                                 ])
+        }
     }
+    
+    //indexPathForRow(at: buttonPosition)
+    
+    func getCurrentCellIndexPath(_ sender: UIButton) -> IndexPath? {
+        let buttonPosition = sender.convert(CGPoint.zero, to: favouritesCollectionView)
+        if let indexPath: IndexPath = favouritesCollectionView.indexPathForItem(at: buttonPosition){
+            return indexPath
+        }
+        return nil
+    }
+
 }
 
-
+//MARK: - Alert messages
 extension UICollectionView {
 
     func setEmptyMessage(_ message: String) {

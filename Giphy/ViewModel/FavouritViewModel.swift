@@ -19,7 +19,6 @@ class FavouritViewModel {
         favouritGip = realm.objects(RealmModel.self)
         //favouritGip = realm.objects(RealmModel.self).filter(NSPredicate(format: "%K == true", "isFavourite"))
     }
-    
 
     func numberOfRowsInSection(section: Int) -> Int {
         if favouritGip!.count != 0 {
