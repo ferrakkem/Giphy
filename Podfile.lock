@@ -1,0 +1,30 @@
+PODS:
+  - Realm (5.5.0):
+    - Realm/Headers (= 5.5.0)
+  - Realm/Headers (5.5.0)
+  - RealmSwift (5.5.0):
+    - Realm (= 5.5.0)
+  - SkeletonView (1.10.0)
+  - SwiftGifOrigin (1.7.0)
+
+DEPENDENCIES:
+  - RealmSwift
+  - SkeletonView
+  - SwiftGifOrigin (~> 1.7.0)
+
+SPEC REPOS:
+  trunk:
+    - Realm
+    - RealmSwift
+    - SkeletonView
+    - SwiftGifOrigin
+
+SPEC CHECKSUMS:
+  Realm: fb399d76f44042e5cdfc630f33828fdb4d077345
+  RealmSwift: 3b7e62356207ef16d34de4e55d475163bd2062bb
+  SkeletonView: 14fbe9702c7fb5c5f011b44ac3ae99fc73155726
+  SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
+
+PODFILE CHECKSUM: 31376b2265800dd9bc4f9867e0c9e8681983d90c
+
+COCOAPODS: 1.9.3
