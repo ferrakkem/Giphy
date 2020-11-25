@@ -89,16 +89,36 @@ extension ViewController: UITableViewDelegate, SkeletonTableViewDataSource, UISc
         if let indexPath = getCurrentCellIndexPath(sender) {
             print(indexPath.row)
             let giphy = trendingViewModel.didSelect(at: indexPath.row)
-        
-            let newGipy = RealmModel()
-            newGipy.title = giphy.title
-            newGipy.isFavourite = true
-            newGipy.image = giphy.images.original.url
-            newGipy.id = giphy.id
-            trendingViewModel.save(gipy: newGipy)
+            
+            let isExists = trendingViewModel.objectExists(id: giphy.id)
+            
+            if isExists {
+                self.openAlert(title: "Exist",
+                                      message: "Already Added",
+                                      alertStyle: .alert,
+                                      actionTitles: ["Okay", "Cancel"],
+                                      actionStyles: [.default, .cancel],
+                                      actions: [
+                                          {_ in
+                                               //print("okay")
+                                          },
+                                          {_ in
+                                               //print("cancel")
+                                          }
+                                     ])
+            }else{
+                let newGipy = RealmModel()
+                newGipy.title = giphy.title
+                newGipy.isFavourite = true
+                newGipy.image = giphy.images.original.url
+                newGipy.id = giphy.id
+                trendingViewModel.save(gipy: newGipy)
+            }
+                        
         }
     }
-
+    
+    
     func getCurrentCellIndexPath(_ sender: UIButton) -> IndexPath? {
         let buttonPosition = sender.convert(CGPoint.zero, to: trendingGipyTableView)
         if let indexPath: IndexPath = trendingGipyTableView.indexPathForRow(at: buttonPosition) {
@@ -158,4 +178,3 @@ extension UIViewController{
         self.present(alertController, animated: true)
     }
 }
-

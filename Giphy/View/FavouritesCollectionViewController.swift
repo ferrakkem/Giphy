@@ -51,7 +51,7 @@ class FavouritesCollectionViewController: UIViewController {
     
 }
 //MARK: - UICollectionView
-extension  FavouritesCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+extension  FavouritesCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if favViewModel.numberOfRows(inSection: section) == 0{

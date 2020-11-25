@@ -8,6 +8,7 @@
 import UIKit
 import SwiftGifOrigin
 
+
 class FavouritesCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var gipImage: UIImageView!
@@ -18,8 +19,11 @@ class FavouritesCollectionViewCell: UICollectionViewCell {
     var customView = CustomView()
     var roundedRectButton = RoundedRectButton()
     
+    weak var delegate: YourCellDelegate?
+    
+    
     @IBAction func makeUnFavourite(_ sender: UIButton) {
-        
+        delegate?.didTapButton(sender)
     }
     
     private var urlString: String = ""

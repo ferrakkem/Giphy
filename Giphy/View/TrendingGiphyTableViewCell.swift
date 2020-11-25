@@ -89,7 +89,6 @@ class TrendingGiphyTableViewCell: UITableViewCell {
     }
     
     @IBAction func makeFavouriteButtonPressed(_ sender: UIButton) {
-        print("makeFavouriteButtonPressed: \(sender.tag)")
         delegate?.didTapButton(sender)
     }
 }
