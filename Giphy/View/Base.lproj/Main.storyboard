@@ -116,44 +116,30 @@
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9S-Xq-NcF">
-                                                            <rect key="frame" x="214" y="58" width="180" height="38"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="38" id="Lfg-Ns-5OU"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="14"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KiH-IK-xKv">
-                                                            <rect key="frame" x="214" y="106" width="180" height="39"/>
+                                                            <rect key="frame" x="214" y="97" width="180" height="48"/>
                                                             <color key="backgroundColor" red="0.1764705882" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="39" id="8iU-ZS-h24"/>
-                                                            </constraints>
-                                                            <state key="normal" title="Make Fav"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                            <state key="normal" title="Make It Favourite">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="makeFavouriteButtonPressed:" destination="Zme-n1-cjX" eventType="touchUpInside" id="iFa-st-vEX"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="KiH-IK-xKv" secondAttribute="bottom" constant="10" id="2Cr-jI-XVP"/>
-                                                        <constraint firstItem="L9S-Xq-NcF" firstAttribute="top" secondItem="UVH-HC-kOT" secondAttribute="bottom" constant="10" id="CGt-Tp-SN8"/>
-                                                        <constraint firstItem="KiH-IK-xKv" firstAttribute="top" secondItem="L9S-Xq-NcF" secondAttribute="bottom" constant="10" id="D7Q-6O-Y2Q"/>
-                                                        <constraint firstItem="KiH-IK-xKv" firstAttribute="leading" secondItem="9IJ-De-MR3" secondAttribute="trailing" constant="10" id="Gpa-bV-vxo"/>
-                                                        <constraint firstItem="L9S-Xq-NcF" firstAttribute="top" secondItem="UVH-HC-kOT" secondAttribute="bottom" constant="10" id="I88-lE-9iL"/>
-                                                        <constraint firstItem="KiH-IK-xKv" firstAttribute="top" secondItem="L9S-Xq-NcF" secondAttribute="bottom" constant="10" id="M2f-Eb-nm5"/>
+                                                        <constraint firstItem="KiH-IK-xKv" firstAttribute="top" secondItem="UVH-HC-kOT" secondAttribute="bottom" constant="49" id="4hX-kQ-qzK"/>
+                                                        <constraint firstItem="KiH-IK-xKv" firstAttribute="bottom" secondItem="9IJ-De-MR3" secondAttribute="bottom" id="IKU-Uw-Jve"/>
                                                         <constraint firstItem="UVH-HC-kOT" firstAttribute="top" secondItem="MI0-pw-l1X" secondAttribute="top" constant="10" id="Mne-Jm-R99"/>
-                                                        <constraint firstAttribute="trailing" secondItem="KiH-IK-xKv" secondAttribute="trailing" constant="10" id="MxA-nn-IUK"/>
                                                         <constraint firstItem="UVH-HC-kOT" firstAttribute="leading" secondItem="9IJ-De-MR3" secondAttribute="trailing" constant="10" id="Vkp-mv-LHf"/>
-                                                        <constraint firstAttribute="trailing" secondItem="L9S-Xq-NcF" secondAttribute="trailing" constant="10" id="W0l-Fb-Nmb"/>
-                                                        <constraint firstItem="L9S-Xq-NcF" firstAttribute="leading" secondItem="9IJ-De-MR3" secondAttribute="trailing" constant="10" id="al4-nW-4fU"/>
+                                                        <constraint firstItem="KiH-IK-xKv" firstAttribute="trailing" secondItem="UVH-HC-kOT" secondAttribute="trailing" id="djt-SO-Xip"/>
                                                         <constraint firstItem="9IJ-De-MR3" firstAttribute="top" secondItem="MI0-pw-l1X" secondAttribute="top" constant="10" id="ez3-mf-9S6"/>
+                                                        <constraint firstItem="KiH-IK-xKv" firstAttribute="leading" secondItem="UVH-HC-kOT" secondAttribute="leading" id="gkc-Fy-STX"/>
                                                         <constraint firstAttribute="bottom" secondItem="9IJ-De-MR3" secondAttribute="bottom" constant="10" id="jhh-37-8HB"/>
                                                         <constraint firstAttribute="trailing" secondItem="UVH-HC-kOT" secondAttribute="trailing" constant="10" id="lkr-cq-KHr"/>
                                                         <constraint firstItem="9IJ-De-MR3" firstAttribute="leading" secondItem="MI0-pw-l1X" secondAttribute="leading" constant="10" id="wgs-e2-TG0"/>
@@ -175,7 +161,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="cardView" destination="MI0-pw-l1X" id="d4s-EK-o98"/>
-                                            <outlet property="date" destination="L9S-Xq-NcF" id="7Yk-20-jOH"/>
                                             <outlet property="favouriteBtn" destination="KiH-IK-xKv" id="Ikh-pF-tzZ"/>
                                             <outlet property="giphyImage" destination="9IJ-De-MR3" id="poT-yE-iYa"/>
                                             <outlet property="title" destination="UVH-HC-kOT" id="oYf-ZE-dQa"/>
@@ -249,12 +234,10 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXY-47-fIF">
-                                                            <rect key="frame" x="10" y="212" width="151" height="41"/>
+                                                            <rect key="frame" x="0.0" y="212" width="171" height="41"/>
                                                             <color key="backgroundColor" red="0.1764705882" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="41" id="l5B-hE-fVJ"/>
-                                                            </constraints>
-                                                            <state key="normal" title="UnFavourite"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <state key="normal" title="Tap anyWhere to UnFavourite"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
@@ -265,13 +248,14 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstItem="JXY-47-fIF" firstAttribute="top" secondItem="7G6-Dn-J0G" secondAttribute="bottom" constant="42" id="7fU-hy-lcO"/>
+                                                        <constraint firstAttribute="bottom" secondItem="JXY-47-fIF" secondAttribute="bottom" constant="11" id="HiU-V3-GWB"/>
+                                                        <constraint firstItem="JXY-47-fIF" firstAttribute="centerX" secondItem="7G6-Dn-J0G" secondAttribute="centerX" id="IL7-bh-QTe"/>
                                                         <constraint firstItem="7G6-Dn-J0G" firstAttribute="leading" secondItem="Ii5-ud-Xle" secondAttribute="leading" constant="10" id="SsL-8c-Xj5"/>
-                                                        <constraint firstItem="JXY-47-fIF" firstAttribute="leading" secondItem="Ii5-ud-Xle" secondAttribute="leading" constant="10" id="TB8-TE-F0C"/>
                                                         <constraint firstAttribute="width" constant="204" id="U6s-T4-LEh"/>
                                                         <constraint firstAttribute="trailing" secondItem="7G6-Dn-J0G" secondAttribute="trailing" constant="10" id="eT0-hc-hBd"/>
                                                         <constraint firstAttribute="height" constant="264" id="ik9-l9-IyJ"/>
-                                                        <constraint firstAttribute="bottom" secondItem="JXY-47-fIF" secondAttribute="bottom" constant="11" id="kXw-zD-fmc"/>
-                                                        <constraint firstAttribute="trailing" secondItem="JXY-47-fIF" secondAttribute="trailing" constant="10" id="od1-8q-MAe"/>
+                                                        <constraint firstItem="JXY-47-fIF" firstAttribute="leading" secondItem="Ii5-ud-Xle" secondAttribute="leading" id="vWD-e1-qG1"/>
                                                         <constraint firstItem="7G6-Dn-J0G" firstAttribute="top" secondItem="Ii5-ud-Xle" secondAttribute="top" constant="10" id="xzp-JQ-J3S"/>
                                                     </constraints>
                                                 </view>

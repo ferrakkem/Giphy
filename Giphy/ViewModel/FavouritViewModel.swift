@@ -9,7 +9,6 @@
 import Foundation
 import RealmSwift
 
-
 class FavouritViewModel {
     
     let realm = try! Realm()
@@ -18,9 +17,10 @@ class FavouritViewModel {
     func loadGiphies(){
         print("loadInformation 2")
         favouritGip = realm.objects(RealmModel.self)
-        //print("Giphies: \(String(describing: favouritGip))")
+        //favouritGip = realm.objects(RealmModel.self).filter(NSPredicate(format: "%K == true", "isFavourite"))
     }
     
+
     func numberOfRowsInSection(section: Int) -> Int {
         if favouritGip!.count != 0 {
             return favouritGip!.count
@@ -41,5 +41,4 @@ class FavouritViewModel {
         return favouritGip![indexPath]
     }
     
-
 }

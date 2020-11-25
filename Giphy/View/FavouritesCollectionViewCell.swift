@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftGifOrigin
 
 class FavouritesCollectionViewCell: UICollectionViewCell {
     
@@ -68,7 +69,7 @@ class FavouritesCollectionViewCell: UICollectionViewCell {
             }
             
             DispatchQueue.main.async {
-                if let image = UIImage(data: data) {
+                if let image = UIImage.gif(data: data) {
                     self.gipImage.image = image
                 }
             }

@@ -63,7 +63,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: - TableView
-extension ViewController: UITableViewDelegate, SkeletonTableViewDataSource, UIScrollViewDelegate, UITableViewDataSource {
+extension ViewController: UITableViewDelegate, SkeletonTableViewDataSource, UIScrollViewDelegate, YourCellDelegate {
     
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
         return K.cellReuseIdentifier
@@ -79,54 +79,32 @@ extension ViewController: UITableViewDelegate, SkeletonTableViewDataSource, UISc
         let giphy = trendingViewModel.cellForRowAt(indexPath: indexPath)
         //print("giphy:::: \(giphy)")
         cell.setCellWithValuesOf(giphy)
+        cell.delegate = self
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    func didTapButton(_ sender: UIButton) {
         
-        let value = trendingViewModel.cellForRowAt(indexPath: indexPath)
-        //print("value: value: \(value) ")
-
-
-        let isExists = trendingViewModel.objectExists(id: value.id)
+        if let indexPath = getCurrentCellIndexPath(sender) {
+            print(indexPath.row)
+            let giphy = trendingViewModel.didSelect(at: indexPath.row)
         
-        if isExists {
-            self.openAlert(title: "Exist",
-                                  message: "Already Added",
-                                  alertStyle: .alert,
-                                  actionTitles: ["Okay", "Cancel"],
-                                  actionStyles: [.default, .cancel],
-                                  actions: [
-                                      {_ in
-                                           //print("okay")
-                                      },
-                                      {_ in
-                                           //print("cancel")
-                                      }
-                                 ])
-        }else{
             let newGipy = RealmModel()
-            newGipy.title = value.title
+            newGipy.title = giphy.title
             newGipy.isFavourite = true
-            newGipy.image = value.images.original.url
-            newGipy.id = value.id
+            newGipy.image = giphy.images.original.url
+            newGipy.id = giphy.id
             trendingViewModel.save(gipy: newGipy)
-            
-            self.openAlert(title: "Successfully",
-                                  message: "Added as your favpurite",
-                                  alertStyle: .alert,
-                                  actionTitles: ["Okay", "Cancel"],
-                                  actionStyles: [.default, .cancel],
-                                  actions: [
-                                      {_ in
-                                           //print("okay")
-                                      },
-                                      {_ in
-                                           //print("cancel")
-                                      }
-                                 ])
-            
         }
+    }
+
+    func getCurrentCellIndexPath(_ sender: UIButton) -> IndexPath? {
+        let buttonPosition = sender.convert(CGPoint.zero, to: trendingGipyTableView)
+        if let indexPath: IndexPath = trendingGipyTableView.indexPathForRow(at: buttonPosition) {
+            return indexPath
+        }
+        return nil
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -164,6 +142,32 @@ extension ViewController: UITableViewDelegate, SkeletonTableViewDataSource, UISc
         }
     }
     
+
+//
+//extension ViewController: ButtonCellDelegate{
+//    func didPressButton(_ tag: Int) {
+//        print("didPressButton")
+//        let isExists = trendingViewModel.objectExists(id: tag)
+//        if isExists {
+//            self.openAlert(title: "Exist",
+//                                  message: "Already Added",
+//                                  alertStyle: .alert,
+//                                  actionTitles: ["Okay", "Cancel"],
+//                                  actionStyles: [.default, .cancel],
+//                                  actions: [
+//                                      {_ in
+//                                           //print("okay")
+//                                      },
+//                                      {_ in
+//                                           //print("cancel")
+//                                      }
+//                                 ])
+//        }else{
+//            trendingViewModel.updateData(gipyId: tag)
+//        }
+//    }
+//}
+
 extension UIViewController{
     public func openAlert(title: String,
                           message: String,
@@ -180,6 +184,4 @@ extension UIViewController{
         self.present(alertController, animated: true)
     }
 }
-
-
 

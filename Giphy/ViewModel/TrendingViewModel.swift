@@ -8,7 +8,6 @@
 import Foundation
 import RealmSwift
 
-
 class TrendingViewModel{
     private var apiService = NetwrokManager()
     private var treadingGiphies = [Datum]()
@@ -16,7 +15,6 @@ class TrendingViewModel{
     //var realmModel = [RealmModel]()
     let realm = try! Realm()
     var searchGip: Results<RealmModel>?
-    
     
     
     func fetchNowPlayingMoviesData(page: Int, completion: @escaping () -> ()) {
@@ -61,6 +59,7 @@ class TrendingViewModel{
         do{
             try realm.write{
                 realm.add(gipy)
+                //realm.add(gipy, update: Realm.UpdatePolicy.modified)
             }
         }catch{
             print("Error during saving time: \(error)")
@@ -80,9 +79,13 @@ class TrendingViewModel{
         // Persist your data easily
         try! realm.write {
             realm.delete(gipy)
-            //delegate?.RecordDeleted() // Notify for succesful deletion
         }
     }
-    
-    
+    //realm.objects(Dog.self).filter("color = 'tan'
+    func updateData(gipyId: Int){
+        try! realm.write {
+            realm.create(RealmModel.self, value: ["id": gipyId, "isFavourite": true], update: .modified)
+            // the book's `title` property will remain unchanged.
+        }
+    }
 }

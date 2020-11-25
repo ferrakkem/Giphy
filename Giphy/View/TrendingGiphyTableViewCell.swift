@@ -8,11 +8,16 @@
 import UIKit
 import SwiftGifOrigin
 
-class TrendingGiphyTableViewCell: UITableViewCell {
+protocol YourCellDelegate: class {
+    func didTapButton(_ sender: UIButton)
+}
 
+class TrendingGiphyTableViewCell: UITableViewCell {
+    
+    weak var delegate: YourCellDelegate?
+    
     @IBOutlet weak var giphyImage: UIImageView!
     @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var date: UILabel!
     
     @IBOutlet weak var cardView: UIView!
     
@@ -21,6 +26,7 @@ class TrendingGiphyTableViewCell: UITableViewCell {
     var customView = CustomView()
     var roundedRectButton = RoundedRectButton()
     
+        
     private var urlString: String = ""
     
     
@@ -54,7 +60,6 @@ class TrendingGiphyTableViewCell: UITableViewCell {
         
         // Before we download the image we clear out the old one
         self.giphyImage.image = nil
-        
         getImageDataFrom(url: posterImageURL)
         customView.customView(userview: cardView)
         roundedRectButton.customBtn(userBtn: favouriteBtn)
@@ -83,4 +88,8 @@ class TrendingGiphyTableViewCell: UITableViewCell {
         }.resume()
     }
     
+    @IBAction func makeFavouriteButtonPressed(_ sender: UIButton) {
+        print("makeFavouriteButtonPressed: \(sender.tag)")
+        delegate?.didTapButton(sender)
+    }
 }
