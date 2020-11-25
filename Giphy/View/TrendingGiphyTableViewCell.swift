@@ -14,6 +14,13 @@ class TrendingGiphyTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var date: UILabel!
     
+    @IBOutlet weak var cardView: UIView!
+    
+    @IBOutlet weak var favouriteBtn: UIButton!
+    
+    var customView = CustomView()
+    var roundedRectButton = RoundedRectButton()
+    
     private var urlString: String = ""
     
     
@@ -41,7 +48,7 @@ class TrendingGiphyTableViewCell: UITableViewCell {
         urlString = poster
         
         guard let posterImageURL = URL(string: urlString) else {
-            self.giphyImage.image = UIImage(named: "noImageAvailable")
+            self.giphyImage.image = UIImage(named: "noImageFound")
             return
         }
         
@@ -49,6 +56,8 @@ class TrendingGiphyTableViewCell: UITableViewCell {
         self.giphyImage.image = nil
         
         getImageDataFrom(url: posterImageURL)
+        customView.customView(userview: cardView)
+        roundedRectButton.customBtn(userBtn: favouriteBtn)
         
     }
     // MARK: - Get image data
@@ -73,5 +82,5 @@ class TrendingGiphyTableViewCell: UITableViewCell {
             }
         }.resume()
     }
-
+    
 }

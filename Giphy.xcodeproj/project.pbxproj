@@ -10,8 +10,14 @@
 		F35370892569CD5B00438087 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35370882569CD5B00438087 /* Constants.swift */; };
 		F353708C2569CF1D00438087 /* TrendingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F353708B2569CF1D00438087 /* TrendingModel.swift */; };
 		F35370912569CF5600438087 /* NetwrokManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35370902569CF5600438087 /* NetwrokManager.swift */; };
+		F35CFF0F256DD52F0073E7C6 /* RoundedRectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35CFF0E256DD52F0073E7C6 /* RoundedRectButton.swift */; };
+		F35CFF13256DD5690073E7C6 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35CFF12256DD5690073E7C6 /* CustomView.swift */; };
 		F36002C9256C717E0068C77C /* TrendingGiphyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36002C8256C717E0068C77C /* TrendingGiphyTableViewCell.swift */; };
 		F36002CD256C7CDB0068C77C /* TrendingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36002CC256C7CDB0068C77C /* TrendingViewModel.swift */; };
+		F36002E5256C97020068C77C /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36002E4256C97020068C77C /* RealmModel.swift */; };
+		F36002EE256CD5320068C77C /* FavouritesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36002ED256CD5320068C77C /* FavouritesCollectionViewController.swift */; };
+		F36002F1256CD7640068C77C /* FavouritViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36002F0256CD7630068C77C /* FavouritViewModel.swift */; };
+		F36002F5256CDB260068C77C /* FavouritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36002F4256CDB260068C77C /* FavouritesCollectionViewCell.swift */; };
 		F371ED672569AA86000229F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371ED662569AA86000229F0 /* AppDelegate.swift */; };
 		F371ED692569AA86000229F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371ED682569AA86000229F0 /* SceneDelegate.swift */; };
 		F371ED6B2569AA86000229F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371ED6A2569AA86000229F0 /* ViewController.swift */; };
@@ -28,8 +34,14 @@
 		F35370882569CD5B00438087 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F353708B2569CF1D00438087 /* TrendingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingModel.swift; sourceTree = "<group>"; };
 		F35370902569CF5600438087 /* NetwrokManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwrokManager.swift; sourceTree = "<group>"; };
+		F35CFF0E256DD52F0073E7C6 /* RoundedRectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectButton.swift; sourceTree = "<group>"; };
+		F35CFF12256DD5690073E7C6 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		F36002C8256C717E0068C77C /* TrendingGiphyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingGiphyTableViewCell.swift; sourceTree = "<group>"; };
 		F36002CC256C7CDB0068C77C /* TrendingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingViewModel.swift; sourceTree = "<group>"; };
+		F36002E4256C97020068C77C /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		F36002ED256CD5320068C77C /* FavouritesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesCollectionViewController.swift; sourceTree = "<group>"; };
+		F36002F0256CD7630068C77C /* FavouritViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritViewModel.swift; sourceTree = "<group>"; };
+		F36002F4256CDB260068C77C /* FavouritesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesCollectionViewCell.swift; sourceTree = "<group>"; };
 		F371ED632569AA86000229F0 /* Giphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F371ED662569AA86000229F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F371ED682569AA86000229F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				F353708B2569CF1D00438087 /* TrendingModel.swift */,
+				F36002E4256C97020068C77C /* RealmModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -88,17 +101,29 @@
 		F35370962569CF7500438087 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F371ED6A2569AA86000229F0 /* ViewController.swift */,
 				F371ED6C2569AA86000229F0 /* Main.storyboard */,
+				F371ED6A2569AA86000229F0 /* ViewController.swift */,
 				F36002C8256C717E0068C77C /* TrendingGiphyTableViewCell.swift */,
+				F36002ED256CD5320068C77C /* FavouritesCollectionViewController.swift */,
+				F36002F4256CDB260068C77C /* FavouritesCollectionViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F35CFF0C256DD4810073E7C6 /* Uitilities */ = {
+			isa = PBXGroup;
+			children = (
+				F35CFF0E256DD52F0073E7C6 /* RoundedRectButton.swift */,
+				F35CFF12256DD5690073E7C6 /* CustomView.swift */,
+			);
+			path = Uitilities;
 			sourceTree = "<group>";
 		};
 		F36002CB256C7CDB0068C77C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				F36002CC256C7CDB0068C77C /* TrendingViewModel.swift */,
+				F36002F0256CD7630068C77C /* FavouritViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -134,6 +159,7 @@
 				F371ED712569AA88000229F0 /* LaunchScreen.storyboard */,
 				F371ED742569AA88000229F0 /* Info.plist */,
 				F35370882569CD5B00438087 /* Constants.swift */,
+				F35CFF0C256DD4810073E7C6 /* Uitilities */,
 			);
 			path = Giphy;
 			sourceTree = "<group>";
@@ -254,9 +280,15 @@
 			files = (
 				F371ED6B2569AA86000229F0 /* ViewController.swift in Sources */,
 				F36002CD256C7CDB0068C77C /* TrendingViewModel.swift in Sources */,
+				F36002F1256CD7640068C77C /* FavouritViewModel.swift in Sources */,
+				F35CFF13256DD5690073E7C6 /* CustomView.swift in Sources */,
 				F371ED672569AA86000229F0 /* AppDelegate.swift in Sources */,
+				F36002F5256CDB260068C77C /* FavouritesCollectionViewCell.swift in Sources */,
 				F353708C2569CF1D00438087 /* TrendingModel.swift in Sources */,
+				F36002E5256C97020068C77C /* RealmModel.swift in Sources */,
 				F371ED692569AA86000229F0 /* SceneDelegate.swift in Sources */,
+				F35CFF0F256DD52F0073E7C6 /* RoundedRectButton.swift in Sources */,
+				F36002EE256CD5320068C77C /* FavouritesCollectionViewController.swift in Sources */,
 				F35370912569CF5600438087 /* NetwrokManager.swift in Sources */,
 				F36002C9256C717E0068C77C /* TrendingGiphyTableViewCell.swift in Sources */,
 				F35370892569CD5B00438087 /* Constants.swift in Sources */,

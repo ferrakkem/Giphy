@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import RealmSwift
 
 // MARK: - TrendingModel
-struct TrendingModel: Codable {
+class TrendingModel:Object, Codable {
     let data: [Datum]
     let pagination: Pagination
     let meta: Meta
