@@ -23,6 +23,7 @@ class FavouritesCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func makeUnFavourite(_ sender: UIButton) {
+        print("makeUnFavourite")
         delegate?.didTapButton(sender)
     }
     

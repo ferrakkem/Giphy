@@ -234,10 +234,10 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXY-47-fIF">
-                                                            <rect key="frame" x="0.0" y="212" width="171" height="41"/>
+                                                            <rect key="frame" x="15" y="212" width="141" height="41"/>
                                                             <color key="backgroundColor" red="0.1764705882" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <state key="normal" title="Tap anyWhere to UnFavourite"/>
+                                                            <state key="normal" title="Tap to Unfavourite"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
@@ -248,14 +248,14 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="JXY-47-fIF" firstAttribute="top" secondItem="7G6-Dn-J0G" secondAttribute="bottom" constant="42" id="7fU-hy-lcO"/>
-                                                        <constraint firstAttribute="bottom" secondItem="JXY-47-fIF" secondAttribute="bottom" constant="11" id="HiU-V3-GWB"/>
-                                                        <constraint firstItem="JXY-47-fIF" firstAttribute="centerX" secondItem="7G6-Dn-J0G" secondAttribute="centerX" id="IL7-bh-QTe"/>
+                                                        <constraint firstItem="JXY-47-fIF" firstAttribute="leading" secondItem="Ii5-ud-Xle" secondAttribute="leading" constant="15" id="0qK-pb-tJ6"/>
+                                                        <constraint firstItem="JXY-47-fIF" firstAttribute="centerX" secondItem="7G6-Dn-J0G" secondAttribute="centerX" id="3Fl-i3-THk"/>
+                                                        <constraint firstAttribute="bottom" secondItem="JXY-47-fIF" secondAttribute="bottom" constant="11" id="BuC-LN-smr"/>
                                                         <constraint firstItem="7G6-Dn-J0G" firstAttribute="leading" secondItem="Ii5-ud-Xle" secondAttribute="leading" constant="10" id="SsL-8c-Xj5"/>
                                                         <constraint firstAttribute="width" constant="204" id="U6s-T4-LEh"/>
                                                         <constraint firstAttribute="trailing" secondItem="7G6-Dn-J0G" secondAttribute="trailing" constant="10" id="eT0-hc-hBd"/>
                                                         <constraint firstAttribute="height" constant="264" id="ik9-l9-IyJ"/>
-                                                        <constraint firstItem="JXY-47-fIF" firstAttribute="leading" secondItem="Ii5-ud-Xle" secondAttribute="leading" id="vWD-e1-qG1"/>
+                                                        <constraint firstItem="JXY-47-fIF" firstAttribute="top" secondItem="7G6-Dn-J0G" secondAttribute="bottom" constant="42" id="o8g-Is-eTj"/>
                                                         <constraint firstItem="7G6-Dn-J0G" firstAttribute="top" secondItem="Ii5-ud-Xle" secondAttribute="top" constant="10" id="xzp-JQ-J3S"/>
                                                     </constraints>
                                                 </view>
