@@ -113,6 +113,20 @@ extension ViewController: UITableViewDelegate, SkeletonTableViewDataSource, UISc
                 newGipy.image = giphy.images.original.url
                 newGipy.id = giphy.id
                 trendingViewModel.save(gipy: newGipy)
+                
+                self.openAlert(title: "Successfully",
+                                      message: "Added",
+                                      alertStyle: .alert,
+                                      actionTitles: ["Okay", "Cancel"],
+                                      actionStyles: [.default, .cancel],
+                                      actions: [
+                                          {_ in
+                                               //print("okay")
+                                          },
+                                          {_ in
+                                               //print("cancel")
+                                          }
+                                     ])
             }
                         
         }
