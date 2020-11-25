@@ -142,32 +142,6 @@ extension ViewController: UITableViewDelegate, SkeletonTableViewDataSource, UISc
         }
     }
     
-
-//
-//extension ViewController: ButtonCellDelegate{
-//    func didPressButton(_ tag: Int) {
-//        print("didPressButton")
-//        let isExists = trendingViewModel.objectExists(id: tag)
-//        if isExists {
-//            self.openAlert(title: "Exist",
-//                                  message: "Already Added",
-//                                  alertStyle: .alert,
-//                                  actionTitles: ["Okay", "Cancel"],
-//                                  actionStyles: [.default, .cancel],
-//                                  actions: [
-//                                      {_ in
-//                                           //print("okay")
-//                                      },
-//                                      {_ in
-//                                           //print("cancel")
-//                                      }
-//                                 ])
-//        }else{
-//            trendingViewModel.updateData(gipyId: tag)
-//        }
-//    }
-//}
-
 extension UIViewController{
     public func openAlert(title: String,
                           message: String,
