@@ -16,8 +16,8 @@ class TrendingViewModel{
     let realm = try! Realm()
     var searchGip: Results<RealmModel>?
     
-    
-    func fetchNowPlayingMoviesData(page: Int, completion: @escaping () -> ()) {
+    //MARK: -
+    func fetchGipData(page: Int, completion: @escaping () -> ()) {
         // weak self - prevent retain cycles
         apiService.getTrendingGiphy(pageNumber: page) { [weak self] (result) in
             
@@ -54,6 +54,17 @@ class TrendingViewModel{
         return treadingGiphies[indexPath]
     }
     
+    
+    //MARK: - Saving favourite gip
+    func saveFavGipyToLocal(title: String, isFavourite: Bool, imageUrl: String, gipyId: String ){
+        let favGipy = RealmModel()
+        favGipy.title = title
+        favGipy.isFavourite = isFavourite
+        favGipy.image = imageUrl
+        favGipy.id = gipyId
+        save(gipy: favGipy)
+    }
+    
     func save(gipy: RealmModel){
         
         do{
@@ -66,6 +77,7 @@ class TrendingViewModel{
         }
     }
     
+    //MARK: - Checking object is Exists or by primarykey
     func objectExists(id: String) -> Bool{
         return realm.object(ofType: RealmModel.self, forPrimaryKey: id) != nil
     }
@@ -75,13 +87,16 @@ class TrendingViewModel{
         return treadingGiphies[indexPath.row]
     }
     
+    //MARK: - Delete records
     func deleteRecord(gipy: RealmModel) {
         // Persist your data easily
         try! realm.write {
             realm.delete(gipy)
         }
     }
-    //realm.objects(Dog.self).filter("color = 'tan'
+    
+    
+    
     func updateData(gipyId: Int){
         try! realm.write {
             realm.create(RealmModel.self, value: ["id": gipyId, "isFavourite": true], update: .modified)

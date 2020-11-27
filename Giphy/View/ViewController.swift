@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     }
     
     func loadNowPlayMoviesData(pageNumber: Int) {
-        trendingViewModel.fetchNowPlayingMoviesData(page: pageNumber) { [weak self] in
+        trendingViewModel.fetchGipData(page: pageNumber) { [weak self] in
             self?.isLoadingList = false
             self?.trendingGipyTableView.dataSource = self
             self?.trendingGipyTableView.delegate = self
@@ -107,13 +107,8 @@ extension ViewController: UITableViewDelegate, SkeletonTableViewDataSource, UISc
                                           }
                                      ])
             }else{
-                let newGipy = RealmModel()
-                newGipy.title = giphy.title
-                newGipy.isFavourite = true
-                newGipy.image = giphy.images.original.url
-                newGipy.id = giphy.id
-                trendingViewModel.save(gipy: newGipy)
-                
+                trendingViewModel.saveFavGipyToLocal(title: giphy.title, isFavourite: true, imageUrl: giphy.images.original.url, gipyId: giphy.id)
+
                 self.openAlert(title: "Successfully",
                                       message: "Added",
                                       alertStyle: .alert,
